@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <!-- header section -->
+
+        </div>
+        <div class="content">
+            <div class="rect">
+                <div>
+                    <h3>report generation</h3>
+                </div>
+                <div class="dropdown">
+                    <label for="courseDropdown">Course</label>
+                    <select name="course" id="courseDropdown">
+                        <option value="">Please select your course</option>
+                        <option value="BTech">BTech</option>
+                        <option value="MCA">MCA</option>
+                        <option value="Mtech">Mtech</option>
+                        <option value="PhD">PhD</option>
+                    </select>
+
+                    <label for="branchDropdown">Branch</label>
+                    <select name="branch" id="branchDropdown">
+
+                        <option value="">Please select your branch</option>
+
+                        <!--dynamic dropdown seleect element for branc-->
+                    </select>
+
+                    <label for="fileType">fileType</label>
+                    <select name="fileType" id="fileType">
+
+                        <option value="">Please file Type</option>
+                        <option value="PDF">PDF</option>
+                        <option value="xls">.xls</option>
+
+                    </select>
+                </div>
+                <div><button type="submit">Download</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="./reportpage.js"></script>
+</body>
+
+</html>
