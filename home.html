@@ -23,20 +23,45 @@
         <input type="number" id="InstituteId" name="InstituteId" required />
 
         <label for="Course">Course:</label>
-        <input type="text" id="Course" name="Course" required />
+        <select name="Course" id="Course" class="select">
+          <option value="">Please select subject</option>
+          <option value="MCA">MCA</option>
+          <option value="BTech">BTech</option>
+          <option value="Mtech">Mtech</option>
+        </select>
 
         <label for="Branch">Branch:</label>
-        <input type="text" id="Branch" name="Branch" required />
+        <select name="Branch" id="Branch" class="select">
+          <option value="">Please select subject</option>
+          <option value="MCA">MCA</option>
+          <option value="CS">CS</option>
+          <option value="EE">EE</option>
+          <option value="ECE">ECE</option>
+          <option value="BT">BT</option>
+          <option value="ME">ME</option>
+          <option value="CE">CE</option>
+        </select>
 
         <label for="subject1">Open Elective 1 Preference 1*:</label>
-        <input type="text" id="subject1" name="subject1" required />
+        <select name="subject1" id="subject1" required class="select">
+          <option value="">Please select subject</option>
+          <option value="option1">option1</option>
+          <option value="option2">option2</option>
+          <option value="option3">option3</option>
+        </select>
 
         <label for="subject2">Open Elective 1 Preference 2*:</label>
-        <input type="text" id="subject2" name="subject2" required />
+        <select name="subject2" id="subject2" required class="select">
+          <option value="">Please select subject</option>
+          <option value="option1">option1</option>
+          <option value="option2">option2</option>
+          <option value="option3">option3</option>
+        </select>
 
-        <button type="submit" id="submitButton">Submit</button>
-        <button type="reset">Reset</button>
+        <button type="button" id="submitButton">Submit</button>
+        <button type="reset" id="reset">Reset</button>
       </form>
+      <p id="message"></p>
     </div>
     <script type="module" src="home.js"></script>
   </body>
