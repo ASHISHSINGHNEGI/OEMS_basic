@@ -1,26 +1,48 @@
-function validateForm() {
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+const firebaseConfig = {
+  apiKey: "AIzaSyB9fWu3R5pfKC3BWBkPjc9zRQB7lWpu7ow",
+  authDomain: "oemsbasic.firebaseapp.com",
+  projectId: "oemsbasic",
+  storageBucket: "oemsbasic.appspot.com",
+  messagingSenderId: "407214565237",
+  appId: "1:407214565237:web:2eb8f7910bce4b00abd53c",
+};
 
-    // Perform your form validation here
-    // For example:
-    if (username === "" || password === "") {
-        document.getElementById('loginMessage').innerHTML = 'Please enter username and password.';
-        return false; // Prevent form submission
-    }
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
 
-    // Valid login
-    if (username == 'ashish' && password === '1234') {
-        document.getElementById('loginMessage').innerHTML = 'Successful';
-        // Redirect to home page after successful login
-        console.log("succussful")
-        for (let index = 0; index < 10000000; index++) {
+function checkUserDetails() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  if (email == "" && password == "") {
+    document.getElementById("loginMessage").innerText =
+      "Email or Password is empty";
+  } else {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(`succussful`);
+        // Redirect to another webpage on successful authentication
+        window.location.href = "./home.html"; // Replace with the desired URL
 
-        }
-        // window.location.replace("./home.html"); // Replace 'home.html' with the actual URL of your home page
-        // window.location.href = "./home.html";
-        window.location.href = "./home.html";
-
-    }
+        // ...
+      })
+      .catch((error) => {
+        document.getElementById("loginMessage").innerText = error.message;
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode + "\n" + errorMessage);
+      });
+  }
 }
+
+document.getElementById("login").addEventListener("click", checkUserDetails);

@@ -1,54 +1,92 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
 
-<body>
+    <style>
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
     <div class="main">
-        <div class="header">
-            <!-- header section -->
+      <div class="header">
+        <!-- header section -->
+      </div>
+      <div class="content">
+        <div class="rect">
+          <div>
+            <h3>report generation</h3>
+          </div>
+          <form action="">
+            <div class="dropdown">
+              <label for="subject1Dropdown">Subject1</label>
+              <select name="subject1Dropdown" id="subject1Dropdown">
+                <option value="">Please select your subject</option>
+                <option value="option1">option1</option>
+                <option value="option2">option2</option>
+                <option value="option3">option3</option>
+                <option value="option1">option4</option>
+              </select>
+              <label for="subject2Dropdown">Subject2</label>
+              <select name="subject2Dropdown" id="subject2Dropdown">
+                <option value="">Please select your subject</option>
+                <option value="option1">option1</option>
+                <option value="option2">option2</option>
+                <option value="option3">option3</option>
+                <option value="option1">option4</option>
+              </select>
+              <label for="courseDropdown">Course</label>
+              <select name="course" id="courseDropdown">
+                <option value="">Please select your course</option>
+                <option value="BTech">BTech</option>
+                <option value="MCA">MCA</option>
+                <option value="Mtech">Mtech</option>
+                <option value="PhD">PhD</option>
+              </select>
 
-        </div>
-        <div class="content">
-            <div class="rect">
-                <div>
-                    <h3>report generation</h3>
-                </div>
-                <div class="dropdown">
-                    <label for="courseDropdown">Course</label>
-                    <select name="course" id="courseDropdown">
-                        <option value="">Please select your course</option>
-                        <option value="BTech">BTech</option>
-                        <option value="MCA">MCA</option>
-                        <option value="Mtech">Mtech</option>
-                        <option value="PhD">PhD</option>
-                    </select>
+              <label for="branchDropdown">Branch</label>
+              <select name="branch" id="branchDropdown">
+                <option value="">Please select your branch</option>
 
-                    <label for="branchDropdown">Branch</label>
-                    <select name="branch" id="branchDropdown">
+                <!--dynamic dropdown seleect element for branc-->
+              </select>
 
-                        <option value="">Please select your branch</option>
-
-                        <!--dynamic dropdown seleect element for branc-->
-                    </select>
-
-                    <label for="fileType">fileType</label>
-                    <select name="fileType" id="fileType">
-
-                        <option value="">Please file Type</option>
-                        <option value="PDF">PDF</option>
-                        <option value="xls">.xls</option>
-
-                    </select>
-                </div>
-                <div><button type="submit">Download</button></div>
+              <label for="fileType">fileType</label>
+              <select name="fileType" id="fileType">
+                <option value="">Please file Type</option>
+                <option value="PDF">PDF</option>
+                <option value="xls">.xls</option>
+              </select>
             </div>
-        </div>
-    </div>
-    <script src="./reportpage.js"></script>
-</body>
 
+            <button type="button" id="show">Show</button>
+            <button type="button" id="generateReport">Download</button>
+            <button type="reset">Reset</button>
+            <!-- report table shown here -->
+            <table id="reportTable"></table>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"
+      type="module"
+    ></script>
+    <script src="./reportpage.js" type="module"></script>
+  </body>
 </html>

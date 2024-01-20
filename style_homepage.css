@@ -4,16 +4,18 @@ body {
   padding: 0;
 }
 
-.container {
-  width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.header {
+  width: 100%;
+  text-align: end;
+  background-color: grey;
 }
-
+.formScore {
+  display: flex;
+  justify-content: space-around;
+}
+#logout {
+  width: fit-content;
+}
 h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -61,4 +63,13 @@ button {
 #message {
   color: green;
   background-color: greenyellow;
+}
+
+.table,
+tr,
+td {
+  border: 1px black solid;
+}
+.stats {
+  border: 1px black solid;
 }
